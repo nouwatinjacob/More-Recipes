@@ -1,0 +1,144 @@
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>More-Recipes</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/user.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body style="overflow-x:hidden; overflow-y:auto;">
+<!-- Navigation bar-->
+<div class="navbar-fixed">
+  <nav class="yellow lighten-4" role="navigation">
+    <div class="nav-wrapper container">
+      <a  id="logo-container" href="user.html" class="brand-logo mainLogo"><img src="./img/lg.png"></a>
+      <ul class="right hide-on-small-and-down">
+                <!-- <li><a href="index.html" class="login">Login</a></li> -->
+                <li><a href="profile.html" class="btn waves-effect waves-light light-green accent-4 join-us">Jacob</a></li>
+              </ul>
+
+              <ul id="nav-mobile" class="side-nav hide-on-med-and-up">
+                  <li><a href="profile.html">Profile</a></li>
+                  <li><a href="user.html">Favourite Recipes</a></li>
+                  <li><a href="myrecipe.html">My Recipes</a></li>
+                  <li><a href="allrecipe.html">All Recipes</a></li>
+                  <li><a href="upvoted.html">Upvoted Recipes</a></li>
+                  <li><a href="addrecipe.html">Add Recipe</a></li>
+                  <li><a href="index.html">Log out</a></li>
+              </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  </div>
+
+<div class="row">
+
+      <div class="col s12 m4 l3 blue-grey darken-4 left sidebar hide-on-small-and-down"> <!-- Note that "m4 l3" was added -->
+        <!-- Grey navigation panel
+
+              This content will be:
+          3-columns-wide on large screens,
+          4-columns-wide on medium screens,
+          12-columns-wide on small screens  -->
+          <ul id="nav">
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="user.html">Favourite Recipes</a></li>
+            <li><a href="myrecipe.html">My Recipe</a></li>
+            <li><a href="allrecipe.html">All Recipes</a></li>
+            <li><a href="upvoted.html">Upvoted Recipes</a></li>
+            <li><a href="addrecipe.html">Add Recipe</a></li>
+            <li><a href="index.html">Log out</a></li>
+          </ul>
+
+      </div>
+
+  <div class="col s12 m8 l9 usercontent"> 
+      <div class="recipes">
+        <div class="row">
+
+        <div class="col s12 m10 l6 offset-m1">
+          <div class="card large mod-recipe2"><br>
+            <h5 class="center">Modify Recipe Image</h5>
+              <div class="col s12 m10 l9 offset-l2 offset-m1">
+                <div class="card">
+                  <div class="card-image waves-effect waves-block waves-light">
+                    <img class="responsive-image" src="img/sp1.png">
+                  </div>
+                </div>
+              </div>
+
+          <form class="">
+            <div class="row">
+              <div class="file-field input-field col s10 m10 offset-l1 offset-s1 offset-m1">
+                <div class="btn">
+                  <span>Choose image</span>
+                  <input type="file">
+                </div>
+              <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+              </div>
+              </div>
+            </div>
+          </form>
+
+          </div>
+        </div>
+
+        <div class="col s12 m10 l6 offset-m1">
+          <div class="card large mod-recipe"><br>
+            <h5 class="center">Modify Recipe Details</h5>
+            <form class="col l12 offset-l1 offset-s1">
+              <div class="row center">
+                <div class="input-field col s10 m10 center">
+                   <input id="name" type="text" class="validate">
+                   <label for="name">Recipe Name</label>
+                </div>
+            </div>
+            <div class="row center">
+                <div class="input-field col s10 m10 center">
+                   <input id="category" type="text" class="validate">
+                   <label for="category">Category</label>
+                </div>
+            </div>
+            <div class="row center">
+            
+            <div class="input-field col s10 m10 center">
+                   <input id="name" type="email" class="validate">
+                   <input id="name" type="email" class="validate">
+                   <input id="name" type="email" class="validate">
+                   <input id="name" type="email" class="validate">
+                   <input id="name" type="email" class="validate">
+                   <input id="name" type="email" class="validate">
+                   <label for="category">Add Ingredients</label>
+                </div>
+            </div>
+            <div class="row center">
+              <div class="input-field col s10 m10 center">
+                <textarea id="textarea1" class="materialize-textarea" data-length="200"></textarea>
+                <label for="textarea1">Direction</label>
+              </div>
+            </div>
+            </form>
+          </div>
+
+        </div>
+
+        <div class="row center">
+            <div class="col s10 m10 offset-l1">
+              <a href="" id="download-utton" class="btn waves-effect waves-light light-green accent-4">Modify Recipe</a>
+          </div>
+
+      </div>
+      </div>
+  </div>
+<!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+  </html>

@@ -1,0 +1,121 @@
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>More-Recipes</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/user.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body style="overflow-x:hidden; overflow-y:auto;">
+<!-- Navigation bar-->
+<div class="navbar-fixed">
+  <nav class="yellow lighten-4" role="navigation">
+    <div class="nav-wrapper container">
+      <a  id="logo-container" href="user.html" class="brand-logo mainLogo"><img src="./img/lg.png"></a>
+      <ul class="right hide-on-small-and-down">
+                <!-- <li><a href="index.html" class="login">Login</a></li> -->
+                <li><a href="profile.html" class="btn waves-effect waves-light light-green accent-4 join-us">Jacob</a></li>
+              </ul>
+
+              <ul id="nav-mobile" class="side-nav hide-on-med-and-up">
+                  <li><a href="profile.html" class="selected">Profile</a></li>
+                  <li><a href="user.html">Favourite Recipes</a></li>
+                  <li><a href="myrecipe.html">My Recipes</a></li>
+                  <li><a href="allrecipe.html">All Recipes</a></li>
+                  <li><a href="upvoted.html">Upvoted Recipes</a></li>
+                  <li><a href="addrecipe.html">Add Recipe</a></li>
+                  <li><a href="index.html">Log out</a></li>
+              </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  </div>
+
+<div class="row">
+
+      <div class="col s12 m4 l3 blue-grey darken-4 left sidebar hide-on-small-and-down"> <!-- Note that "m4 l3" was added -->
+        <!-- Grey navigation panel
+
+              This content will be:
+          3-columns-wide on large screens,
+          4-columns-wide on medium screens,
+          12-columns-wide on small screens  -->
+          <ul id="nav">
+            <li><a href="profile.html" class="selected">Profile</a></li>
+            <li><a href="user.html">Favourite Recipes</a></li>
+            <li><a href="myrecipe.html">My Recipes</a></li>
+            <li><a href="allrecipe.html">All Recipes</a></li>
+            <li><a href="upvoted.html">Upvoted Recipes</a></li>
+            <li><a href="addrecipe.html">Add Recipe</a></li>
+            <li><a href="index.html">Log out</a></li>
+          </ul>
+
+      </div>
+
+  <div class="col s12 m8 l9 usercontent"> 
+      <div class="recipes">
+        <div class="row">
+
+        <div class="col s12 m10 l6">
+          <div class="card large pro-input"><br>
+            <h5 class="center">Profile Details</h5>
+              <div class="col l10 offset-l2 offset-s2 offset-m2">
+              <p><strong>Name:</strong> Nouwatin Jacob</p>
+              <p><strong>Username:</strong> sansaristic</p>
+              <p><strong>Email:</strong> jaysansa@gmail.com</p>
+              <p><strong>Telephone:</strong> 08064557366</p>
+              </div>
+          </div>
+        </div>
+
+        <div class="col s12 m10 l6">
+          <div class="card large pro-input"><br>
+            <h5 class="center">Edit Profile</h5>
+            <form class="col l12 offset-l1 offset-s2 offset-m2">
+              <div class="row">
+                <div class="input-field col l10">
+                   <input id="name" type="email" class="validate">
+                   <label for="name">Full Name</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col l10">
+                   <input id="username" type="email" class="validate">
+                   <label for="username">Username</label>
+                </div>
+            </div>
+            <div class="row">
+              <div class="input-field col l10">
+                   <input id="email" type="email" class="validate">
+                   <label for="email">Email</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col l10">
+                   <input id="phone" type="tel" class="validate">
+                   <label for="phone">Telephone</label>
+                </div>
+            </div>
+            <div class="row ">
+            <div class="col l7">
+              <a href="registration.html" id="download-button" class="btn waves-effect waves-light light-green accent-4 right">Update</a>
+              </div>
+          </div>
+            </form>
+          </div>
+
+        </div>
+      </div>
+      </div>
+  </div>
+<!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+  </html>

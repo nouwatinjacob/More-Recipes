@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>More-Recipe</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body style="overflow-x:hidden; overflow-y:auto;">
+<!-- Navigation bar-->
+<div class="navbar-fixed">
+  <nav class="col m10 l10 yellow lighten-4" role="navigation">
+    <div class="nav-wrapper container">
+      <a  id="logo-container" href="index.html" class="brand-logo mainLogo"><img src="./img/lg.png"></a>
+      <ul class="right hide-on-med-and-down">
+                <li><a href="">Services</a></li>
+                  <li><a href="#">Who We Are</a></li>
+                <!-- <li><a href="index.html" class="login">Login</a></li> -->
+                <li><a href="registration.html" class="btn waves-effect waves-light light-green accent-4 join-us">Get Started</a></li>
+              </ul>
+
+              <ul id="nav-mobile" class="side-nav hide-on-small-and-up">
+                  <li><a href="">Services</a></li>
+                  <li><a href="#">Who We Are</a></li>
+                  <li><a href="registration.html" id="join" class="btn waves-effect waves-light light-green accent-4" style="margin:0px; padding:0px;">Get Started</a></li>
+              </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  </div>
+
+  <!--welcome/login-->
+  <div id="index-banner" class="parallax-container">
+    <div class="section no-pad-bot">
+      <div class="row">
+      <div class="row front">
+        <h1 class="header center light-green-text accent-3 hide-on-med-and-down">Welcome</h1>
+          <h5 class="header center light hide-on-med-and-down">A modern responsive front-end framework based on Material Design</h5>
+        </div>
+      	<form class="col s10 m10 l6 offset-s1 offset-l3 offset-m2 index-form">
+            <div class="row center">
+                <div class="input-field col s12 m10">
+                   <input id="email" type="email" class="validate">
+                   <label for="email" style="color:#64dd17; font-size: 20px;">Email/Username</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m10">
+                    <input id="pass" type="password" class="validate">
+                    <label for="pass" data-error="wrong" data-success="right" style="color:#64dd17; font-size: 20px;">Password</label>
+ 
+                </div>
+            </div>
+
+            <div class="row center">
+                <div class="col s10 m10">
+                    <p>
+     	                 <input type="checkbox" id="remember">
+                        <label for="remember" style="color:#fff; font-size: 20px;">Remember me</label>
+                        <a href="#" class="right" style="color:#FF9800; font-size: 20px;">Forgot password</a>
+                    </p>
+                </div>
+            </div>
+
+	        <div class="row center">
+	        	<div class="col s10 m10">
+	          	<a href="user.html" id="download-button" class="btn-large waves-effect waves-light light-green accent-4">Log In</a>
+	          	<a href="registration.html" id="download-button" class="btn-large waves-effect waves-light light-green accent-4 hide-on-med-and-down">Get Started</a>
+	          	</div>
+        	</div>
+	          	
+      </form>
+      </div>
+     </div>
+    <div class="parallax"></div>
+  </div>
+
+
+<!--Food Recipes-->
+	<div class="recipes">
+
+		<h3 class="header center light-green-text accent-3">Top Recipes</h3>
+        
+    <!--Search Bar-->
+      <nav class="white">
+            <div class="nav-wrapper">      
+                       <div class="center row">
+                          <div class="col s12 " >
+                            <div class="row" id="topbarsearch">
+                              <div class="input-field col s6 s12 red-text">
+                                <i class="red-text material-icons prefix">search</i>
+                                <input type="text" placeholder="Search Recipes" id="autocomplete-input" class="autocomplete red-text" >
+                                </div>
+                              </div>
+                            </div>
+                          </div>          
+              
+            </div>
+          </nav>        
+
+
+
+     	<div class="row">
+      
+      <!--latest recipes-->
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img width="230" height="200" src="img/sp.jpg">
+              <span class="card-title"><h5><a href="recipe2.html" style="color:#fff;">Egusi Soup</a></h5></span>
+            </div>
+            <div class="card-action col l12">
+              <a href="recipe2.html" class="btn col offset-l5">Info</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img width="230" height="200" src="img/sp1.png">
+              <span class="card-title"><h5><a href="recipe2.html" style="color:#fff;">Fried Rice</a></h5></span>
+            </div>
+            <div class="card-action col l12">
+              <a href="recipe2.html" class="btn col offset-l5">Info</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img width="230" height="200" src="img/sp.jpg">
+              <span class="card-title"><h5><a href="recipe2.html" style="color:#fff;">Salad</a></h5></span>
+            </div>
+            <div class="card-action col l12">
+              <a href="recipe2.html" class="btn col offset-l5">Info</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img width="230" height="200" src="img/sp1.png">
+              <span class="card-title"><h5><a href="recipe2.html" style="color:#fff;">Banga Soup</a></h5></span>
+            </div>
+            <div class="card-action col l12">
+              <a href="recipe2.html" class="btn col offset-l5">Info</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img width="230" height="200" src="img/sp.jpg">
+              <span class="card-title"><h5><a href="recipe2.html" style="color:#fff;">okro Soup</a></h5></span>
+            </div>
+            <div class="card-action col l12">
+              <a href="recipe2.html" class="btn col offset-l5">Info</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img width="230" height="200" src="img/sp1.png">
+              <span class="card-title"><h5><a href="recipe2.html" style="color:#fff;">Plantain Chips</a></h5></span>
+            </div>
+            <div class="card-action col l12">
+              <a href="recipe2.html" class="btn col offset-l5">Info</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img width="230" height="200" src="img/sp.jpg">
+              <span class="card-title"><h5><a href="recipe2.html" style="color:#fff;">Eba</a></h5></span>
+            </div>
+            <div class="card-action col l12">
+              <a href="recipe2.html" class="btn col offset-l5">Info</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img width="230" height="200" src="img/sp1.png">
+              <span class="card-title"><h5><a href="recipe2.html" style="color:#fff;">Efo Riro</a></h5></span>
+            </div>
+            <div class="card-action col l12">
+              <a href="recipe2.html" class="btn col offset-l5">Info</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img width="230" height="200" src="img/sp.jpg">
+              <span class="card-title"><h5><a href="recipe2.html" style="color:#fff;">okro Soup</a></h5></span>
+            </div>
+            <div class="card-action col l12">
+              <a href="recipe2.html" class="btn col offset-l5">Info</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img width="230" height="200" src="img/sp1.png">
+              <span class="card-title"><h5><a href="recipe2.html" style="color:#fff;">Plantain Chips</a></h5></span>
+            </div>
+            <div class="card-action col l12">
+              <a href="recipe2.html" class="btn col offset-l5">Info</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img width="230" height="200" src="img/sp.jpg">
+              <span class="card-title"><h5><a href="recipe2.html" style="color:#fff;">Eba</a></h5></span>
+            </div>
+            <div class="card-action col l12">
+              <a href="recipe2.html" class="btn col offset-l5">Info</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img width="230" height="200" src="img/sp1.png">
+              <span class="card-title"><h5><a href="recipe2.html" style="color:#fff;">Efo Riro</a></h5></span>
+            </div>
+            <div class="card-action col l12">
+              <a href="recipe2.html" class="btn col offset-l5">Info</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul class="pagination center">
+            <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+            <li class="active"><a href="#!">1</a></li>
+            <li class="waves-effect"><a href="#!">2</a></li>
+            <li class="waves-effect"><a href="#!">3</a></li>
+            <li class="waves-effect"><a href="#!">4</a></li>
+            <li class="waves-effect"><a href="#!">5</a></li>
+            <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+          </ul>
+          <br>
+
+
+          
+     </div>
+
+
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>More-Recipe</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body style="overflow-x:hidden; overflow-y:auto;">
+<!-- Navigation bar-->
+<div class="navbar-fixed">
+  <nav class="col m10 l10 yellow lighten-4" role="navigation">
+    <div class="nav-wrapper container">
+      <a  id="logo-container" href="index.html" class="brand-logo mainLogo"><img src="./img/lg.png"></a>
+      <ul class="right hide-on-med-and-down">
+                <li><a href="">Services</a></li>
+                  <li><a href="#">Who We Are</a></li>
+                <!-- <li><a href="index.html" class="login">Login</a></li> -->
+                <li><a href="registration.html" class="btn waves-effect waves-light light-green accent-4 join-us">Get Started</a></li>
+              </ul>
+
+              <ul id="nav-mobile" class="side-nav hide-on-small-and-up">
+                  <li><a href="">Services</a></li>
+                  <li><a href="#">Who We Are</a></li>
+                  <li><a href="registration.html" id="join" class="btn waves-effect waves-light light-green accent-4" style="margin:0px; padding:0px;">Get Started</a></li>
+              </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  </div>
+
+<!--Registration Form-->
+    <div class="row reg-form">
+      <h4 class="center light-green-text accent-3" style="margin-top: 20px;">Be part of this great Community</h4>
+    <form class="col s12 offset-s3">
+            <div class="row center">
+                <div class="input-field col s6 m6">
+                   <input id="name" type="email" class="validate">
+                   <label for="name" style="color:#64dd17; font-size: 18px;">Full Name</label>
+                </div>
+            </div>
+            <div class="row center">
+                <div class="input-field col s6 m6">
+                   <input id="email" type="email" class="validate">
+                   <label for="email" style="color:#64dd17; font-size: 18px;">Email</label>
+                </div>
+            </div>
+            <div class="row center">
+                <div class="input-field col s6 m6">
+                   <input id="username" type="email" class="validate">
+                   <label for="username" style="color:#64dd17; font-size: 18px;">Username</label>
+                </div>
+            </div>
+            <div class="row center">
+                <div class="input-field col s6 m6">
+                   <input id="phone" type="tel" class="validate">
+                   <label for="phone" style="color:#64dd17; font-size: 18px;">Telephone</label>
+                </div>
+            </div>
+            <div class="row center">
+                <div class="input-field col s6 m6">
+                    <input id="pass" type="password" class="validate">
+                    <label for="pass" data-error="wrong" data-success="right" style="color:#64dd17; font-size: 18px;">Password</label>
+                </div>
+            </div>
+            <div class="row center">
+                <div class="input-field col s6 m6">
+                    <input id="pass" type="password" class="validate">
+                    <label for="pass" data-error="wrong" data-success="right" style="color:#64dd17; font-size: 18px;">Confirm Password</label>
+                </div>
+            </div>
+
+          <div class="row center">
+            <div class="col s6">
+              <a href="registration.html" id="download-button" class="btn waves-effect waves-light light-green accent-4">Submit</a>
+              </div>
+          </div>
+              
+      </form>
+      </div>
+
+
+
+   <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </div>
+  </body>
+</html>
