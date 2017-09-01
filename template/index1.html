@@ -9,87 +9,145 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-
+  <link href="css/user.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   </head>
-<body style="overflow-x:hidden; overflow-y:auto;">
+<body>
+<!-- -->
 
-<div class="col l12 s12 m12 top">
-
-  <div id="index-banner" class="welcome">
-    <!-- Navigation bar-->
-  <div class="navbar-fixed">
-  <nav class="col m10 l10 transparent navbar-default" id="mynav" role="navigation">
+<div class="banner">
+  <!-- Navigation bar-->
+<div class="wrapper">
+  <nav class="transparent navbar-default navbar-fixed" id="mynav" role="navigation">
     <div class="nav-wrapper container">
-      <a  href="index.html"><img src="./img/lg.png" id="logo-container"></a>
+      <a  href="index.html" class="brand-logo mainLogo"><img src="./img/lg.png" id="logo-container"></a>
+
+      <a  href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">Menu</i></a>
       <ul class="right hide-on-med-and-down">
                 <li><a href="">Services</a></li>
                   <li><a href="#">Who We Are</a></li>
                 <!-- <li><a href="index.html" class="login">Login</a></li> -->
-                <li><a href="registration.html" class="btn waves-effect waves-light light-green accent-4 join-us">Get Started</a></li>
+                <li><a href="#modal1" class="modal-trigger btn waves-effect waves-light light-green accent-4 join-us">Get Started</a></li>
               </ul>
+
+                       
+            <div id="modal1" class="modal modal-fixed-footer">
+              <div class="modal-content">
+                
+                <form class="col s12 offset-s3 offset-l2">
+                <h4>Registration Form</h4>
+                <p>Be part of this great Community</p>
+            <div class="row center">
+                <div class="input-field col s6 m6">
+                   <input id="name" type="email" class="validate">
+                   <label for="name" style="color:#64dd17; font-size: 18px;">Full Name</label>
+                </div>
+            </div>
+            <div class="row center">
+                <div class="input-field col s6 m6">
+                   <input id="email" type="email" class="validate">
+                   <label for="email" style="color:#64dd17; font-size: 18px;">Email</label>
+                </div>
+            </div>
+            <div class="row center">
+                <div class="input-field col s6 m6">
+                   <input id="username" type="email" class="validate">
+                   <label for="username" style="color:#64dd17; font-size: 18px;">Username</label>
+                </div>
+            </div>
+            <div class="row center">
+                <div class="input-field col s6 m6">
+                   <input id="phone" type="tel" class="validate">
+                   <label for="phone" style="color:#64dd17; font-size: 18px;">Telephone</label>
+                </div>
+            </div>
+            <div class="row center">
+                <div class="input-field col s6 m6">
+                    <input id="pass" type="password" class="validate">
+                    <label for="pass" data-error="wrong" data-success="right" style="color:#64dd17; font-size: 18px;">Password</label>
+                </div>
+            </div>
+            <div class="row center">
+                <div class="input-field col s6 m6">
+                    <input id="pass" type="password" class="validate">
+                    <label for="pass" data-error="wrong" data-success="right" style="color:#64dd17; font-size: 18px;">Confirm Password</label>
+                </div>
+            </div>
+
+          <div class="row center">
+            <div class="col s6">
+              <a href="registration.html" id="download-button" class="btn waves-effect waves-light light-green accent-4">Submit</a>
+              </div>
+          </div>
+              
+      </form>
+              </div>
+              <div class="modal-footer">
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Agree</a>
+              </div>
+            </div>
 
               <ul id="nav-mobile" class="side-nav hide-on-small-and-up">
                   <li><a href="">Services</a></li>
                   <li><a href="#">Who We Are</a></li>
-                  <li><a href="registration.html" id="join" class="btn waves-effect waves-light light-green accent-4" style="margin:0px; padding:0px;">Get Started</a></li>
+                  <li><a href="#modal1" id="join" class="btn waves-effect waves-light light-green accent-4 modal-trigger" style="margin:0px; padding:0px;">Get Started</a></li>
               </ul>
       <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
     </div>
   </nav>
-  </div>
-     <!-- welcome / login -->
-    <div class="section no-pad-bot">
-      <div class="row col l12 s12">
-      <div class="row front col l6">
-        <h1 class="header center light-green-text accent-3 hide-on-med-and-down">Welcome</h1>
-          <h5 class="header center light hide-on-med-and-down">A modern responsive front-end framework based on Material Design</h5>
+</div> <!--End #top -->
+
+<div >
+    <div class="row"> 
+      <div class="col s12 m6 l6 xl6">
+          <div style="color: #fff; margin-top: 100px;">
+          <h1 class="header center light-green-text accent-3">Welcome</h1>
+          <h5 class="header center light">A modern responsive front-end framework based on Material Design</h5>
         </div>
-        <div class="col l6 s12 m12">
-      	<form class="col s16 m10 l10 offset-l2 offset-m2 offset-s1">
-            <h5 class="center">Login</h5>
+      </div>
+
+      <div class="col s12 m6 l6 xl6">
+        <form class="index-form" style="margin-top: 100px;">
             <div class="row center">
-                <div class="input-field col s12 m10">
+                <div class="input-field col s12 m10 l9">
                    <input id="email" type="email" class="validate">
-                   <label for="email" style="color: white; font-size: 16px;">Email/Username</label>
+                   <label for="email" style="color: white; font-size: 20px;">Email/Username</label>
                 </div>
             </div>
             <div class="row">
-                <div class="input-field col s12 m10">
+                <div class="input-field col s12 m10 l9">
                     <input id="pass" type="password" class="validate">
-                    <label for="pass" data-error="wrong" data-success="right" style="color: white; font-size: 16px;">Password</label>
+                    <label for="pass" data-error="wrong" data-success="right" style="color: white; font-size: 20px;">Password</label>
  
                 </div>
             </div>
 
             <div class="row center">
-                <div class="col s10 m10">
+                <div class="col s10 m10 l9">
                     <p>
-     	                 <input type="checkbox" id="remember">
-                        <label for="remember" style="color:#fff; font-size: 14px;">Remember me</label>
-                        <a href="#" class="right" style="color:#FF9800; font-size: 14px;">Forgot password</a>
+                       <input type="checkbox" id="remember">
+                        <label for="remember" style="color:#fff; font-size: 16px;">Remember me</label>
+                        <a href="#" class="right" style="color:#FF9800; font-size: 16px;">Forgot password</a>
                     </p>
                 </div>
             </div>
 
-	        <div class="row center">
-	        	<div class="col s10 m10">
-	          	<a href="user.html" id="download-button" class="btn waves-effect waves-light light-green accent-4">Log In</a>
-	          	<a href="registration.html" id="download-button" class="btn waves-effect waves-light light-green accent-4 hide-on-med-and-down">Get Started</a>
-	          	</div>
-        	</div>
-	          	
+          <div class="row center">
+            <div class="col s10 m10">
+              <a href="user.html" id="download-button" class="btn waves-effect waves-light light-green accent-4">Log In</a>
+              </div>
+          </div>
+              
       </form>
       </div>
-      </div>
-     </div>
-  </div>
+    </div>
 
-  </div>
+</div>
+</div>
 
-<!--Food Recipes-->
-  <div class="recipes col l12 m12 s12">
 
-    <h3 class="header center light-green-text accent-3">Top Recipes</h3>
+    <div class="recipes">
+      
+      <h3 class="header center light-green-text accent-3">Top Recipes</h3>
         
     <!--Search Bar-->
       <nav class="white">
@@ -107,10 +165,10 @@
               
             </div>
           </nav>        
-
-
-
-      <div class="row">
+      
+    
+  <!-- recipes list -->
+  <div class="row">
       
       <!--latest recipes-->
         <div class="col s12 m6 l3">
@@ -119,8 +177,9 @@
               <img width="230" height="200" src="img/sp.jpg">
               <span class="card-title"><h5><a href="recipe2.html" style="color:#fff !important; text-shadow: 1px 1px black;">Egusi Soup</a></h5></span>
             </div>
-            <div class="card-action col l12 m12 s12 offset-s3" >
-              <a href="recipe2.html" class="btn col offset-l5" style="color:#000 !important; text-shadow: 1px 1px black;">Info</a>
+            <div class="card-action col l12 m12 s12">
+              <a href="recipe.html" class="btn col l12">Info</a>
+              <a class="col l6 offset-l4 offset-s4  black-text"><i class="material-icons tiny prefix">star</i>4.3</a>
             </div>
           </div>
         </div>
@@ -131,8 +190,9 @@
               <img width="230" height="200" src="img/sp1.png">
               <span class="card-title"><h5><a href="recipe2.html" style="color:#fff; text-shadow: 1px 1px black;">Fried Rice</a></h5></span>
             </div>
-            <div class="card-action col l12">
-              <a href="recipe2.html" class="btn col offset-l5" style="color:#000 !important; text-shadow: 1px 1px black;">Info</a>
+            <div class="card-action col l12 m12 s12">
+              <a href="recipe.html" class="btn col l12">Info</a>
+              <a class="col l6 offset-l4 offset-s4  black-text"><i class="material-icons tiny prefix">star</i>4.3</a>
             </div>
           </div>
         </div>
@@ -143,8 +203,9 @@
               <img width="230" height="200" src="img/sp.jpg">
               <span class="card-title"><h5><a href="recipe2.html" style="color:#fff; text-shadow: 1px 1px black;">Salad</a></h5></span>
             </div>
-            <div class="card-action col l12">
-              <a href="recipe2.html" class="btn col offset-l5" style="color:#000 !important; text-shadow: 1px 1px black;">Info</a>
+            <div class="card-action col l12 m12 s12">
+              <a href="recipe.html" class="btn col l12">Info</a>
+              <a class="col l6 offset-l4 offset-s4  black-text"><i class="material-icons tiny prefix">star</i>4.3</a>
             </div>
           </div>
         </div>
@@ -155,8 +216,9 @@
               <img width="230" height="200" src="img/sp1.png">
               <span class="card-title"><h5><a href="recipe2.html" style="color:#fff; text-shadow: 1px 1px black;">Banga Soup</a></h5></span>
             </div>
-            <div class="card-action col l12">
-              <a href="recipe2.html" class="btn col offset-l5" style="color:#000 !important; text-shadow: 1px 1px black;">Info</a>
+            <div class="card-action col l12 m12 s12">
+              <a href="recipe.html" class="btn col l12">Info</a>
+              <a class="col l6 offset-l4 offset-s4  black-text"><i class="material-icons tiny prefix">star</i>4.3</a>
             </div>
           </div>
         </div>
@@ -169,8 +231,9 @@
               <img width="230" height="200" src="img/sp.jpg">
               <span class="card-title"><h5><a href="recipe2.html" style="color:#fff; text-shadow: 1px 1px black;">okro Soup</a></h5></span>
             </div>
-            <div class="card-action col l12">
-              <a href="recipe2.html" class="btn col offset-l5" style="color:#000 !important; text-shadow: 1px 1px black;">Info</a>
+            <div class="card-action col l12 m12 s12">
+              <a href="recipe.html" class="btn col l12">Info</a>
+              <a class="col l6 offset-l4 offset-s4  black-text"><i class="material-icons tiny prefix">star</i>4.3</a>
             </div>
           </div>
         </div>
@@ -181,8 +244,9 @@
               <img width="230" height="200" src="img/sp1.png">
               <span class="card-title"><h5><a href="recipe2.html" style="color:#fff; text-shadow: 1px 1px black;">Plantain Chips</a></h5></span>
             </div>
-            <div class="card-action col l12">
-              <a href="recipe2.html" class="btn col offset-l5" style="color:#000 !important; text-shadow: 1px 1px black;">Info</a>
+            <div class="card-action col l12 m12 s12">
+              <a href="recipe.html" class="btn col l12">Info</a>
+              <a class="col l6 offset-l4 offset-s4  black-text"><i class="material-icons tiny prefix">star</i>4.3</a>
             </div>
           </div>
         </div>
@@ -193,8 +257,9 @@
               <img width="230" height="200" src="img/sp.jpg">
               <span class="card-title"><h5><a href="recipe2.html" style="color:#fff; text-shadow: 1px 1px black;">Eba</a></h5></span>
             </div>
-            <div class="card-action col l12">
-              <a href="recipe2.html" class="btn col offset-l5" style="color:#000 !important; text-shadow: 1px 1px black;">Info</a>
+            <div class="card-action col l12 m12 s12">
+              <a href="recipe.html" class="btn col l12">Info</a>
+              <a class="col l6 offset-l4 offset-s4  black-text"><i class="material-icons tiny prefix">star</i>4.3</a>
             </div>
           </div>
         </div>
@@ -205,8 +270,9 @@
               <img width="230" height="200" src="img/sp1.png">
               <span class="card-title"><h5><a href="recipe2.html" style="color:#fff; text-shadow: 1px 1px black;">Efo Riro</a></h5></span>
             </div>
-            <div class="card-action col l12">
-              <a href="recipe2.html" class="btn col offset-l5" style="color:#000 !important; text-shadow: 1px 1px black;">Info</a>
+            <div class="card-action col l12 m12 s12">
+              <a href="recipe.html" class="btn col l12">Info</a>
+              <a class="col l6 offset-l4 offset-s4  black-text"><i class="material-icons tiny prefix">star</i>4.3</a>
             </div>
           </div>
         </div>
@@ -219,8 +285,9 @@
               <img width="230" height="200" src="img/sp.jpg">
               <span class="card-title"><h5><a href="recipe2.html" style="color:#fff; text-shadow: 1px 1px black;">okro Soup</a></h5></span>
             </div>
-            <div class="card-action col l12">
-              <a href="recipe2.html" class="btn col offset-l5" style="color:#000 !important; text-shadow: 1px 1px black;">Info</a>
+            <div class="card-action col l12 m12 s12">
+              <a href="recipe.html" class="btn col l12">Info</a>
+              <a class="col l6 offset-l4 offset-s4  black-text"><i class="material-icons tiny prefix">star</i>4.3</a>
             </div>
           </div>
         </div>
@@ -231,8 +298,9 @@
               <img width="230" height="200" src="img/sp1.png">
               <span class="card-title"><h5><a href="recipe2.html" style="color:#fff; text-shadow: 1px 1px black;">Plantain Chips</a></h5></span>
             </div>
-            <div class="card-action col l12">
-              <a href="recipe2.html" class="btn col offset-l5" style="color:#000 !important; text-shadow: 1px 1px black;">Info</a>
+            <div class="card-action col l12 m12 s12">
+              <a href="recipe.html" class="btn col l12">Info</a>
+              <a class="col l6 offset-l4 offset-s4  black-text"><i class="material-icons tiny prefix">star</i>4.3</a>
             </div>
           </div>
         </div>
@@ -243,8 +311,9 @@
               <img width="230" height="200" src="img/sp.jpg">
               <span class="card-title"><h5><a href="recipe2.html" style="color:#fff; text-shadow: 1px 1px black;">Eba</a></h5></span>
             </div>
-            <div class="card-action col l12">
-              <a href="recipe2.html" class="btn col offset-l5" style="color:#000 !important; text-shadow: 1px 1px black;">Info</a>
+            <div class="card-action col l12 m12 s12">
+              <a href="recipe.html" class="btn col l12">Info</a>
+              <a class="col l6 offset-l4 offset-s4  black-text"><i class="material-icons tiny prefix">star</i>4.3</a>
             </div>
           </div>
         </div>
@@ -255,13 +324,15 @@
               <img width="230" height="200" src="img/sp1.png">
               <span class="card-title"><h5><a href="recipe2.html" style="color:#fff; text-shadow: 1px 1px black;">Efo Riro</a></h5></span>
             </div>
-            <div class="card-action col l12">
-              <a href="recipe2.html" class="btn col offset-l5" style="color:#000 !important; text-shadow: 1px 1px black;">Info</a>
+            <div class="card-action col l12 m12 s12">
+              <a href="recipe.html" class="btn col l12">Info</a>
+              <a class="col l6 offset-l4 offset-s4  black-text"><i class="material-icons tiny prefix">star</i>4.3</a>
             </div>
           </div>
         </div>
       </div>
-      <ul class="pagination center">
+
+        <ul class="pagination center">
             <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
             <li class="active"><a href="#!">1</a></li>
             <li class="waves-effect"><a href="#!">2</a></li>
@@ -271,12 +342,7 @@
             <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
           </ul>
           <br>
-
-
-          
-     </div>
-
-
+      </div>
 
    <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>

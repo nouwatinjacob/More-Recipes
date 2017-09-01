@@ -14,9 +14,18 @@
   );
 
     $('.tooltipped').tooltip({delay: 50});
-    $(".dropdown-button").dropdown();
     Materialize.updateTextFields();
     $('input#input_text, textarea#textarea1').characterCounter();
+
+    $('.modal').modal({
+      dismissible: true, // Modal can be dismissed by clicking outside of the modal
+      opacity: .5, // Opacity of modal background
+      inDuration: 300, // Transition in duration
+      outDuration: 200, // Transition out duration
+      startingTop: '4%', // Starting top style attribute
+      endingTop: '10%', // Ending top style attribute
+    }
+  );
 
   }); // end of document ready
 })(jQuery); // end of jQuery name space
