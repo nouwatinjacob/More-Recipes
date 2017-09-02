@@ -40,4 +40,24 @@ module.exports = {
       })
       .catch(error => res.status(400).send({ errors: error.errors }));
   },
+
+  delete(req, res) {
+	return Recipe
+		.findById(req.params.recipeId)
+		.then((recipe) => {
+			if(!recipe) {
+				return res.status(404).send({
+					message: 'Recipe Not Found',
+				});
+			}
+			return recipe
+			.destroy()
+			.then(() => res.status(200).send({
+				message: 'Recipe deleted successfully'
+			}))
+			.catch((error) => res.status(400).send(error));
+		})
+		.catch((error) => res.status(400).send(error));
+  },
+
 };
