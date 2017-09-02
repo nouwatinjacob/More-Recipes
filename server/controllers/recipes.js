@@ -13,6 +13,13 @@ module.exports = {
 		.catch(error => res.status(404).send(error));
 	},
 
+	list(req, res) {
+    return Recipe
+      .findAll()
+      .then(recipes => res.status(200).send({ message: 'All Recipes displayed', recipes }))
+      .catch(error => res.status(400).send({ errors: error.message }));
+  },
+
 	update(req, res) {	
        return Recipe
       .findById(req.params.recipeId)
