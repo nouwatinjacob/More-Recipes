@@ -8,4 +8,5 @@ module.exports = (app) => {
 
   app.post('/api/users/signup', usersController.create);
   app.post('/api/recipes', recipesController.create);
+  app.put('api/recipes/:recipeId', recipesController.update)
 };
