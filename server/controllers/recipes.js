@@ -13,10 +13,10 @@ module.exports = {
 		.catch(error => res.status(404).send(error));
 	},
 
-	update(req, res) {
-    return Recipe
+	update(req, res) {	
+       return Recipe
       .findById(req.params.recipeId)
-      .then((recipe) => {
+      .then( (recipe) => {
         if (!recipe) {
           return res.status(404).send({
             message: 'Recipe Not Found',
@@ -24,14 +24,13 @@ module.exports = {
         }
         return recipe
           .update({
-            name: req.body.name,
-			description: req.body.description,
-			ingredients: req.body.ingredients,
-			user_id: req.body.user_id
+            name: req.body.name || recipe.name,
+			description: req.body.description || recipe.description,
+			ingredients: req.body.ingredients || recipe.ingredients,
           })
           .then(() => res.status(200).send({ message: 'Recipe updated', recipe }))
           .catch(error => res.status(400).send({ message: 'Recipe not updated', errors: error.errors }));
       })
       .catch(error => res.status(400).send({ errors: error.errors }));
-  }
+  },
 };
