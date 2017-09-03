@@ -17,13 +17,18 @@
     "url": "https://github.com/nouwatinjacob/More-Recipes/issues"
   },
   "dependencies": {
+    "bcrypt": "^1.0.3",
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.17.2",
+    "dotenv": "^4.0.0",
     "express": "^4.15.4",
+    "js-logger": "^1.4.1",
     "jsonwebtoken": "^7.4.3",
     "morgan": "^1.8.2",
     "pg": "^7.2.0",
     "pg-hstore": "^2.3.2",
-    "sequelize": "^4.8.0"
+    "sequelize": "^4.8.0",
+    "validatorjs": "^3.13.5"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",

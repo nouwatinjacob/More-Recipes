@@ -15,7 +15,17 @@ module.exports = (sequelize, DataTypes) => {
     user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-  }, 
+  },
+},
+
+  {
+    classMethods: {
+      associate: (models) => {
+        Recipe.belongsTo(models.User, { foreignKey: 'user_id' });
+      }
+    }
+
+
   });
   //return
   return Recipe;
