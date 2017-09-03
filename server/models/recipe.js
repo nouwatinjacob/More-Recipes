@@ -21,6 +21,7 @@ module.exports = (sequelize, DataTypes) => {
   {
     classMethods: {
       associate: (models) => {
+        Recipe.hasMany(models.Review, {foreignKey: 'recipe_id'});
         Recipe.belongsTo(models.User, { foreignKey: 'user_id' });
       }
     }
