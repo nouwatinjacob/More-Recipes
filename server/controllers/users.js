@@ -1,61 +1,80 @@
 const User = require('../models').User;
 const Validator = require('validatorjs');
+const _ = require('lodash');
 const jwt = require('jsonwebtoken');
 
-const secret = process.env.SECRET_TOKEN;
+const secret = 'iloveeatingpizza';
 
-const userDetails = (user) => {
-  return {
-    id: user.id,
-    name: user.name,
-    email: user.email,
-    telephone: user.telephone,
-    username: user.username,
-    password: user.password,
-    createdAt: user.createdAt,
-    updatedAt: user.updatedAt,
-    user_image: user.user_image
-  };
-};
-
-const signUpRules = {
+const regRules = {
   name: 'required|min:3',
   email: 'required|email',
-  password: 'required|min:6|confirmed',
-  password_confirmation: 'required',
+  password: 'required|min:6',
+  verify_password: 'required',
   telephone: 'required',
   username: 'required|min:3',
-  user_image:'required' 
+  user_image:'required'
 };
 
 module.exports = {
 
-  create(req, res) {
-    const validation = new Validator(req.body, signUpRules);
-    if (validation.passes()) {
-      return User.create(req.body)
-        .then((newUser) => {
-          const token = jwt.sign(userDetails(newUser), secret, { expiresIn: '10h' });
-          res.status(201).send({ message: 'User successfully created', token });
-        })
-        .catch(error => res.status(400).send({ message: 'User not created', error }));
-    }
-    return res.status(400).json({
-      message: 'Validation error',
-      errors: validation.errors.all()
-    });
-  },
+    create(req, res, next) {
+        const body = req.body;
+        const validator = new Validator(body, regRules);
+        if (validator.passes()) {
+            if (body.verify_password !== body.password) {
+                return res.status(401).send({message: 'Password does not match'});
+            }
 
-  // create(req, res) {
-  //   return User
-  //     .create({
-  //       name: req.body.name,
-  //       email: req.body.email,
-  //       telephone: req.body.telephone,
-  //       username: req.body.username,
-  //       user_image: req.body.user_image,
-  //     })
-  //     .then(user => res.status(201).send(user))
-  //     .catch(error => res.status(400).send(error));
-  // },
+            User.findOne({
+                where: {email: body.email}
+            })
+                .then((user) => {
+                    if (user) {
+                        return res.status(404).json({code: 404, message: 'User already exists'});
+                    }
+                    User.create(body)
+                        .then((savedUser) => {
+                            const data = _.pick(savedUser, ['id', 'name', 'email', 'telephone', 'username', 'user_image']);
+                            const myToken = jwt.sign(data, secret, {expiresIn: 24 * 60 * 60});
+                            return res.status(200).send({token: myToken, message: 'Registration Succesful'});
+                        })
+                        .catch(error => res.status(500).send(error));
+                })
+                .catch((error) => {
+                    return res.status(500).send('An error occured while trying to create a user ', error.message);
+                });
+
+        } else {
+            return res.status(401).json({message: validator.errors.all()});
+        }
+    },
+
+    login (req, res) {
+        const body = _.pick(req.body, ['username', 'password']);
+        const loginRules = {
+            username: 'required',
+            password: 'required'
+        };
+        const validator = new Validator(body, loginRules);
+        if (validator.fails()) {
+            return res.status(401).json({ message: validator.errors.all() });
+        }
+        User.findOne({
+            where: {
+                username: body.username
+            }
+        })
+            .then((user) => {
+                if (!user) {
+                    return Promise.reject({ code: 404, message: 'User not found' });
+                }
+                if (!user.comparePassword(user, body.password)) {
+                    return res.status(400).send({ message: 'Password does not match' });
+                }
+                const data = _.pick(user, ['id', 'name', 'email', 'telephone', 'username', 'user_image']);
+                const myToken = jwt.sign(data, secret, { expiresIn: 24 * 60 * 60 });
+                return res.status(200).json({ token: myToken, message: 'Login Successful' });
+            })
+            .catch(error => res.send(error));
+    },
 };

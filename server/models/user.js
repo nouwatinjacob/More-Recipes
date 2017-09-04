@@ -10,6 +10,9 @@ module.exports = (sequelize, DataTypes) => {
       email: {
       type:DataTypes.STRING,
       allowNull: false,
+      validate: {
+          isEmail: true
+        }
       },
       telephone: {
       type:DataTypes.STRING,
@@ -26,37 +29,27 @@ module.exports = (sequelize, DataTypes) => {
       password: {
       type: DataTypes.STRING,
       allowNull: false,
-    },
+    }
+ });
 
- },
 
-    {
-    classMethods: {
-      associate: (models) => {
-        User.hasMany(models.Recipe, { foreignKey: 'user_id' });
-        User.hasMany(models.Review, { foreignKey: 'user_id' });
-      }
-    },
-    instanceMethods: {
-      generateHash(password) {
-        this.password = bcrypt.hashSync(password, bcrypt.genSaltSync(8), null);
-      },
-      validPassword(password) {
-        return bcrypt.compareSync(password, this.password);
-      },
-    },
-    hooks: {
-      beforeCreate: (user) => {
-        user.generateHash(user.password);
-      },
-      beforeUpdate: (user) => {
-        if (user.password) {
-          user.generateHash(user.password);
-        }
-      }
-   }
+  User.associate = (models) => {
+    User.hasMany(models.Recipe, {
+        foreignKey: 'user_id' });
+    User.hasMany(models.Review, {
+        foreignKey: 'user_id' });
+    };
 
-  });
+    User.prototype.comparePassword = (user, password) => {
+        return bcrypt.compareSync(password, user.password);
+    };
+    // Hooks
+    User.hook('beforeCreate', (user) => {
+        const salt = bcrypt.genSaltSync(10);
+        const hash = bcrypt.hashSync(user.password, salt);
+
+        user.password = hash;
+    });
 
    return User;
 };
