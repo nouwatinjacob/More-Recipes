@@ -29,10 +29,22 @@ margin:0;
 overflow-x: hidden
 }
 
+.recipes {
+  margin-top: 27px;
+  background: #efebe9;
+}
+
+.pagination li.active {
+    background-color: #64dd17;
+ }
+
 .user-recipes {
   background: #efebe9;
 }
 
+.card-action {
+  background-color: transparent!important;
+}
 
 ul#nav li {
   list-style: none;
@@ -63,31 +75,7 @@ ul#nav li a.selected {
 
 
 
-/* ingredient list */
 
-ol {
-  margin: 0 0 1.5em;
-  padding: 0;
-  counter-reset: item;
-}
- 
-ol>li {
-  margin: 0;
-  display: block;
-  padding: 2px;
-  text-indent: -1.2rem;
-  list-style-type: none;
-  counter-increment: item;
-}
- 
-ol>li:before {
-  display: inline-block;
-  width: 1.5rem;
-  padding-right: .5rem;
-  font-weight: bold;
-  text-align: right;
-  content: counter(item) '.';
-}
 
 /* search */
 #topbarsearch .input-field .prefix { 
@@ -103,6 +91,18 @@ ol>li:before {
 /* pro-input form */
 .pro-input {
   height: 555px !important;
+}
+
+.add-input {
+  height: 1000px !important;
+}
+
+.add-input input {
+  margin-bottom: 6px !important;
+}
+
+.down-but a {
+  padding: 3px;
 }
 
 .mod-recipe {

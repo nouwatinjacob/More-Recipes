@@ -7,7 +7,6 @@
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/user.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 </head>
 <body>
@@ -17,8 +16,6 @@
     <div class="nav-wrapper container">
       <a  id="logo-container" href="user.html" class="brand-logo mainLogo"><img src="./img/lg.png"></a>
       <ul class="right hide-on-small-and-down">
-                <li><a href="">Services</a></li>
-                  <li><a href="#">Who We Are</a></li>
                 <!-- <li><a href="index.html" class="login">Login</a></li> -->
                 <li><a href="profile.html" class="btn waves-effect waves-light light-green accent-4 join-us">Jacob</a></li>
               </ul>
@@ -52,27 +49,28 @@
 
       </div>
 
-      <div class="col s12 m8 l9 usercontent"> <!-- Note that "m8 l9" was added -->
+      <div class="col s12 m8 l9 usercontent grey lighten-3"> <!-- Note that "m8 l9" was added -->
 
-    <h4 class="header center col s12 light-green-text accent-3">Add Recipe</h4>
+    
       <div class="row col s12">
-        
+        <div class="card large add-input col l9 offset-l2">
         <form class="col s12 m10 l10 offset-l2 offset-s1 offset-m2" id="">
+        <h3 class="header center col s12">Add Recipe</h3>
           <div class="row center">
-                <div class="input-field col s10 m10 center">
+                <div class="input-field col s10 m10 l8 center">
                    <input id="name" type="text" class="validate">
-                   <label for="name" style="color:#64dd17; font-size: 16px;">Recipe Name</label>
+                   <label for="name" style="color:#000; font-size: 16px;">Recipe Name</label>
                 </div>
             </div>
             <div class="row center">
-                <div class="input-field col s10 m10 center">
+                <div class="input-field col s10 m10 l8 center">
                    <input id="category" type="text" class="validate">
-                   <label for="category" style="color:#64dd17; font-size: 16px;">Category</label>
+                   <label for="category" style="color:#000; font-size: 16px;">Category</label>
                 </div>
             </div>
             <div class="row center">
-            <p style="color:#64dd17; font-size: 16px;">Add Ingredients</p>
-            <div class="input-field col s10 m10 center">
+            <p style="color:#000; font-size: 16px;">Add Ingredients</p>
+            <div class="input-field col s10 m10 l8 center">
                    <input id="name" type="email" class="validate">
                    <input id="name" type="email" class="validate">
                    <input id="name" type="email" class="validate">
@@ -82,13 +80,13 @@
                 </div>
             </div>
             <div class="row center">
-              <div class="input-field col s10 m10 center">
+              <div class="input-field col s10 m10 l8 center">
                 <textarea id="textarea1" class="materialize-textarea" data-length="200"></textarea>
-                <label for="textarea1" style="color:#64dd17; font-size: 16px;">Direction</label>
+                <label for="textarea1" style="color:#000; font-size: 16px;">Direction</label>
               </div>
             </div>
             <div class="row center">
-            <div class="file-field input-field col s10 m10 center">
+            <div class="file-field input-field col s10 l8 m10 center">
               <div class="btn">
                 <span>Upload image</span>
                 <input type="file">
@@ -99,12 +97,13 @@
           </div>
           </div>
             <div class="row center">
-            <div class="col s10 m10">
+            <div class="col s10 m10 down-but">
               <a href="" id="download-button" class="btn waves-effect waves-light light-green accent-4">Add Recipe</a>
-              <a href="" id="download-button" class="btn waves-effect waves-light light-green accent-4">Add More Ingredients</a>
+              <a href="" id="download-button" class="btn waves-effect waves-light light-green accent-4 hide-on-small-and-down">Add More Ingredients</a>
               </div>
           </div>
         </form>
+        </div>
         
       </div>
 
