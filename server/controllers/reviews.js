@@ -1,4 +1,6 @@
-const Review = require('../models').Review;
+import db from '../models';
+
+const Review = db.Review;
 
 module.exports = {
 	create(req, res){

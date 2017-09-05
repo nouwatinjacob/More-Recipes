@@ -1,4 +1,6 @@
-const Recipe = require('../models').Recipe;
+import db from '../models';
+
+const Recipe = db.Recipe;
 
 module.exports = {
 	create(req, res){

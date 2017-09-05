@@ -1,14 +1,12 @@
 const usersController = require('../controllers').users;
 const recipesController = require('../controllers').recipes;
 const reviewsController = require('../controllers').reviews;
-
+const favoritesController = require('../controllers').favorites;
 
 module.exports = (app) => {
   app.get('/api', (req, res) => res.status(200).send({
-    message: 'Welcome to the Todos API!',
+    message: 'Welcome to the More Recipes API!',
   }));
-
- 
 
   app.post('/api/users/signup', usersController.create);//register user
   app.post('/api/users/signin', usersController.login);// login user
@@ -18,4 +16,7 @@ module.exports = (app) => {
   app.put('/api/recipes/:recipeId', recipesController.update); //modify recipe
 
   app.post('/api/recipes/:recipeId/reviews', reviewsController.create);//post review
+
+  app.post('/api/users/:userId/recipes', favoritesController.create);
+  app.get('api/users/:userId/recipes', favoritesController.list);
 };

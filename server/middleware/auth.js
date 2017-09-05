@@ -25,8 +25,14 @@ const Auth = {
         } else {
             res.status(403).send('Token not provided');
         }
+    },
+    VerifyUser (req, res, next) {
+        if (req.decoded && req.decoded.username) return next();
+        return res.status(401).send({ message: 'You must be a User to perform this operation' });
     }
 };
+
+
 
 
 

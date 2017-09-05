@@ -16,18 +16,15 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
       allowNull: false,
   },
-},
+});
+    Recipe.associate = (models) => {
+        Recipe.hasMany(models.Review, {
+          foreignKey: 'recipe_id'
+        });
+        Recipe.belongsTo(models.User, {
+            foreignKey: 'user_id'
+        });
+  };
 
-  {
-    classMethods: {
-      associate: (models) => {
-        Recipe.hasMany(models.Review, {foreignKey: 'recipe_id'});
-        Recipe.belongsTo(models.User, { foreignKey: 'user_id' });
-      }
-    }
-
-
-  });
-  //return
   return Recipe;
 };
