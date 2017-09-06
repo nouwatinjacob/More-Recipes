@@ -24,6 +24,12 @@ module.exports = (sequelize, DataTypes) => {
         Recipe.belongsTo(models.User, {
             foreignKey: 'user_id'
         });
+        Recipe.hasMany(models.Favorite, {
+            foreignKey: 'recipe_id'
+        });
+        Recipe.hasMany(models.Rating, {
+            foreignKey: 'recipe_id'
+        })
   };
 
   return Recipe;

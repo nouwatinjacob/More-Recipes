@@ -2,6 +2,7 @@ const usersController = require('../controllers').users;
 const recipesController = require('../controllers').recipes;
 const reviewsController = require('../controllers').reviews;
 const favoritesController = require('../controllers').favorites;
+const ratingsController = require('../controllers').ratings;
 
 module.exports = (app) => {
   app.get('/api', (req, res) => res.status(200).send({
@@ -18,5 +19,9 @@ module.exports = (app) => {
   app.post('/api/recipes/:recipeId/reviews', reviewsController.create);//post review
 
   app.post('/api/users/:userId/recipes', favoritesController.create);
-  app.get('api/users/:userId/recipes', favoritesController.list);
+  app.get('/api/users/:userId/recipes', favoritesController.list);
+
+  app.post('/api/ratings/:userId/upVotes', ratingsController.upVote);
+  app.post('/api/ratings/:userId/downVotes', ratingsController.downVote);
+  app.get('/api/ratings/', ratingsController.list);
 };
