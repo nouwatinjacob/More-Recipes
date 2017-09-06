@@ -60,49 +60,64 @@
       <div class="recipes">
         <div class="row">
 
-        <div class="col s12 m10 l6">
+        <div class="col s12 m12 l6">
           <div class="card large pro-input"><br>
             <h5 class="center">Profile Details</h5>
-              <div class="col l10 offset-l2 offset-s2 offset-m2">
-              <p><strong>Name:</strong> Nouwatin Jacob</p>
-              <p><strong>Username:</strong> sansaristic</p>
-              <p><strong>Email:</strong> jaysansa@gmail.com</p>
-              <p><strong>Telephone:</strong> 08064557366</p>
+              <div class="col l10 m10 offset-l2 offset-s2 offset-m1 mycard">
+                <img src="img/avatar.jpg" alt="John">
+                <div class="container">
+                  <h5>Nouwatin Jacob</h3>
+                  <p><b>Username:</b> sansaristic</p>
+                  <p class="title"><b>Email:</b> jaysansa@gmail.com</p>
+                  <p><b>Telephone:</b> 08064557366</p>
+                </div>
               </div>
           </div>
         </div>
 
-        <div class="col s12 m10 l6">
+        <div class="col s12 m12 l6">
           <div class="card large pro-input"><br>
             <h5 class="center">Edit Profile</h5>
-            <form class="col l12 offset-l1 offset-s2 offset-m2">
-              <div class="row">
-                <div class="input-field col l10">
+            <form class="col l12 m12 offset-l1 offset-s2 offset-m3">
+              <div class="row myrow">
+                <div class="input-field col l10 m6">
                    <input id="name" type="email" class="validate">
                    <label for="name">Full Name</label>
                 </div>
             </div>
-            <div class="row">
-                <div class="input-field col l10">
+            <div class="row myrow">
+                <div class="input-field col l10 m6">
                    <input id="username" type="email" class="validate">
                    <label for="username">Username</label>
                 </div>
             </div>
-            <div class="row">
-              <div class="input-field col l10">
+            <div class="row myrow">
+              <div class="input-field col l10 m6">
                    <input id="email" type="email" class="validate">
                    <label for="email">Email</label>
                 </div>
             </div>
-            <div class="row">
-                <div class="input-field col l10">
+            <div class="row myrow">
+                <div class="input-field col l10 m6">
                    <input id="phone" type="tel" class="validate">
                    <label for="phone">Telephone</label>
                 </div>
             </div>
-            <div class="row ">
+            <div class="row myrow">
+            <div class="file-field input-field col l10 m6">
+              <div class="btn mybtn green darken-4">
+                <span>Upload image</span>
+                <input type="file">
+              </div>
+            <div class="file-path-wrapper">
+                <input class="file-path validate" type="text">
+            </div>
+          </div>
+          </div>
+            
+            <div class="row myrow">
             <div class="col l7">
-              <a href="registration.html" id="download-button" class="btn waves-effect waves-light light-green accent-4 right">Update</a>
+              <a href="registration.html" id="download-button" class="btn waves-effect waves-light right">Update</a>
               </div>
           </div>
             </form>

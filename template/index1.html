@@ -10,35 +10,17 @@
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 
-  <script type="text/javascript">
-    $(document).ready(function(){       
-   var scroll_start = 0;
-   var startchange = $('#top');
-   var offset = startchange.offset();
-    if (startchange.length){
-   $(document).scroll(function() { 
-      scroll_start = $(this).scrollTop();
-      if(scroll_start > offset.top) {
-          $(".navbar-default").css('background-color', '#F89D0E !important');
-       }
-   });
-    }
-});
-  </script>
-
-  <style type="text/css">
-    
-  </style>
-
-</head>
+  </head>
 <body style="overflow-x:hidden; overflow-y:auto;">
 
+<div class="col l12 s12 m12 top">
 
-<!-- Navigation bar-->
-<div class="navbar-fixed top" id="top">
+  <div id="index-banner" class="welcome">
+    <!-- Navigation bar-->
+  <div class="navbar-fixed">
   <nav class="col m10 l10 transparent navbar-default" id="mynav" role="navigation">
     <div class="nav-wrapper container">
-      <a  href="index.html" class="brand-logo mainLogo"><img src="./img/lg.png" id="logo-container"></a>
+      <a  href="index.html"><img src="./img/lg.png" id="logo-container"></a>
       <ul class="right hide-on-med-and-down">
                 <li><a href="">Services</a></li>
                   <li><a href="#">Who We Are</a></li>
@@ -55,29 +37,26 @@
     </div>
   </nav>
   </div>
-
-
-  <!--welcome/login-->
-  <div id="index-banner" class="parallax-container">
-
+     <!-- welcome / login -->
     <div class="section no-pad-bot">
       <div class="row col l12 s12">
       <div class="row front col l6">
         <h1 class="header center light-green-text accent-3 hide-on-med-and-down">Welcome</h1>
           <h5 class="header center light hide-on-med-and-down">A modern responsive front-end framework based on Material Design</h5>
         </div>
-        <div class="col l6 s12">
-      	<form class="col s10 m10 l10 offset-l2 index-form">
+        <div class="col l6 s12 m12">
+      	<form class="col s16 m10 l10 offset-l2 offset-m2 offset-s1">
+            <h5 class="center">Login</h5>
             <div class="row center">
                 <div class="input-field col s12 m10">
                    <input id="email" type="email" class="validate">
-                   <label for="email" style="color: white; font-size: 20px;">Email/Username</label>
+                   <label for="email" style="color: white; font-size: 16px;">Email/Username</label>
                 </div>
             </div>
             <div class="row">
                 <div class="input-field col s12 m10">
                     <input id="pass" type="password" class="validate">
-                    <label for="pass" data-error="wrong" data-success="right" style="color: white; font-size: 20px;">Password</label>
+                    <label for="pass" data-error="wrong" data-success="right" style="color: white; font-size: 16px;">Password</label>
  
                 </div>
             </div>
@@ -86,16 +65,16 @@
                 <div class="col s10 m10">
                     <p>
      	                 <input type="checkbox" id="remember">
-                        <label for="remember" style="color:#fff; font-size: 16px;">Remember me</label>
-                        <a href="#" class="right" style="color:#FF9800; font-size: 16px;">Forgot password</a>
+                        <label for="remember" style="color:#fff; font-size: 14px;">Remember me</label>
+                        <a href="#" class="right" style="color:#FF9800; font-size: 14px;">Forgot password</a>
                     </p>
                 </div>
             </div>
 
 	        <div class="row center">
 	        	<div class="col s10 m10">
-	          	<a href="user.html" id="download-button" class="btn-large waves-effect waves-light light-green accent-4">Log In</a>
-	          	<a href="registration.html" id="download-button" class="btn-large waves-effect waves-light light-green accent-4 hide-on-med-and-down">Get Started</a>
+	          	<a href="user.html" id="download-button" class="btn waves-effect waves-light light-green accent-4">Log In</a>
+	          	<a href="registration.html" id="download-button" class="btn waves-effect waves-light light-green accent-4 hide-on-med-and-down">Get Started</a>
 	          	</div>
         	</div>
 	          	
@@ -103,14 +82,14 @@
       </div>
       </div>
      </div>
-    <div class="parallax"></div>
   </div>
 
+  </div>
 
 <!--Food Recipes-->
-	<div class="recipes col l12">
+  <div class="recipes col l12 m12 s12">
 
-		<h3 class="header center light-green-text accent-3">Top Recipes</h3>
+    <h3 class="header center light-green-text accent-3">Top Recipes</h3>
         
     <!--Search Bar-->
       <nav class="white">
@@ -131,7 +110,7 @@
 
 
 
-     	<div class="row">
+      <div class="row">
       
       <!--latest recipes-->
         <div class="col s12 m6 l3">
@@ -299,11 +278,10 @@
 
 
 
-
-  <!--  Scripts-->
+   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
 
   </body>
-</html>
+  </html>

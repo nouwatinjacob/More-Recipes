@@ -102,9 +102,66 @@ ol>li:before {
 
 /* pro-input form */
 .pro-input {
-  height: 550px !important;
+  height: 555px !important;
 }
 
 .mod-recipe {
   height: 860px !important;
+}
+
+
+/* Profile   */
+.mycard {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 300px;
+    margin: auto;
+    text-align: center;
+}
+
+mycard .container {
+    padding: 0 16px;
+}
+
+mycard .title {
+    color: grey;
+    font-size: 18px;
+}
+
+mycard button {
+    border: none;
+    outline: 0;
+    display: inline-block;
+    padding: 8px;
+    color: white;
+    background-color: #000;
+    text-align: center;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+}
+
+mycard a {
+    text-decoration: none;
+    font-size: 22px;
+    color: black;
+}
+
+mycard button:hover, a:hover {
+    opacity: 0.7;
+}
+
+mycard img{
+
+  height: 100px;
+  width:  50px;
+}
+
+.myrow {
+  margin-bottom: 6px !important;
+}
+
+.myrow .mybtn {
+  height: 26px;
+  line-height: 26px;
+  padding: 0 0.5rem;
 }

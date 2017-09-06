@@ -11,8 +11,15 @@ nav .brand-logo {
   color: #444;
 }
 
-.mainLogo{
-  margin-top:1%;
+nav {
+
+}
+.navbar{
+
+}
+nav ul a,
+nav .mainLogo{
+   color: #fff;
 }
 
 p {
@@ -30,15 +37,14 @@ p {
 
 #index-banner {
   background: url("../img/bg.jpg") no-repeat;
-  background-size: 100% 100%;
+  background-size: cover;
   min-height: 500px;
+  min-width: 100%;
   line-height: 0;
   height: auto;
   color: rgba(255,255,255,.9);
 }
-.parallax-container {
-  
-}
+
   .parallax-container .section {
     width: 100%;
   }
@@ -66,6 +72,19 @@ p {
   }
 }
 
+@media only screen and (max-width : 321px) {
+  #index-banner{
+   
+  }
+}
+
+@media only screen and (max-width : 321px) {
+ nav img{
+    width:120px;
+    height:50px;
+    margin-left: 16px; 
+  }
+}
 
 .icon-block {
   padding: 0 15px;
@@ -78,6 +97,13 @@ footer.page-footer {
   margin: 0;
 }
 
+.index-form {
+  margin-top: 60px;
+}
+
+.front {
+  margin-top: 50px;
+}
 
 .reg-form {
    background: #f5f5f5;

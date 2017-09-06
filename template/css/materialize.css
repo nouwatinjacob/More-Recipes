@@ -4405,6 +4405,7 @@ nav .input-field label.active i {
 
 .navbar-fixed nav {
   position: fixed;
+  height: 56px;
 }
 
 @media only screen and (min-width: 601px) {
@@ -5968,16 +5969,16 @@ label {
    ========================================================================== */
 /* Style Placeholders */
 ::-webkit-input-placeholder {
-  color: #d1d1d1;
+  color: #000;
 }
 ::-moz-placeholder {
-  color: #d1d1d1;
+  color: #000;
 }
 :-ms-input-placeholder {
-  color: #d1d1d1;
+  color: #000;
 }
 ::placeholder {
-  color: #d1d1d1;
+  color: #000;
 }
 
 /* Text inputs */
