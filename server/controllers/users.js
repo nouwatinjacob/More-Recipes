@@ -19,7 +19,7 @@ const regRules = {
 
 const usersController = {
 
-    create(req, res, next) {
+    create(req, res) {
         const body = req.body;
         const validator = new Validator(body, regRules);
         if (validator.passes()) {
@@ -38,7 +38,10 @@ const usersController = {
                         .then((savedUser) => {
                             const data = _.pick(savedUser, ['id', 'name', 'email', 'telephone', 'username', 'user_image']);
                             const myToken = jwt.sign(data, secret, {expiresIn: 24 * 60 * 60});
-                            return res.status(200).json({code:200, token: myToken, message: 'Registration Succesfull'});
+                            return res.status(200).json({
+                              code:200,
+                              token: myToken,
+                              message: 'Registration Succesfull'});
                         })
                         .catch(error => res.status(500).send(error));
                 })
@@ -71,11 +74,15 @@ const usersController = {
                     return Promise.reject({ code: 404, message: 'User not found' });
                 }
                 if (!user.comparePassword(user, body.password)) {
-                    return res.status(400).json({ message: 'Password does not match' });
+                    return res.status(400).json({
+                      message: 'Password does not match'
+                    });
                 }
                 const data = _.pick(user, ['id', 'name', 'email', 'telephone', 'username', 'user_image']);
                 const myToken = jwt.sign(data, secret, { expiresIn: 24 * 60 * 60 });
-                return res.status(200).json({ token: myToken, message: 'Login Successful' });
+                return res.status(200).json({
+                  token: myToken,
+                  message: 'Login Successful' });
             })
             .catch(error => res.send(error));
     },

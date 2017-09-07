@@ -22,17 +22,31 @@ const ratingsController = {
     }).then((recipesVoteCount) => {
         console.log(recipesVoteCount);
         })
-    .catch(error => res.status(400).send({
+    .catch(error => res.status(400).json({
 	        errors: error.message
         }));
     },
     };
 
 let vote = (req, res, status) => {
-    let promises = [];
-    let findUser = User.findOne({where: {id: req.decoded.user_id}});
-    let findRecipe = Recipe.findOne({where: {id: req.body.recipe_id}});
-    let findRating = Rating.findOne({where: {recipe_id: req.body.recipe_id, user_id: req.decoded.user_id}});
+    let findUser;
+  let promises = [];
+  findUser = User.findOne({
+	where: {
+	  id: req.decoded.user_id
+	}
+  });
+  let findRecipe = Recipe.findOne({
+        where: {
+            id: req.body.recipe_id
+        }
+    });
+    let findRating = Rating.findOne({
+        where: {
+        recipe_id: req.body.recipe_id,
+        user_id: req.decoded.user_id
+    }
+    });
 
     promises.push(findUser);
     promises.push(findRecipe);

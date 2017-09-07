@@ -1,4 +1,5 @@
 import db from "../models";
+const sequelize = db.sequelize;
 
 const Recipe = db.Recipe;
 const User = db.User;
@@ -25,11 +26,15 @@ const recipesController = {
             .catch(error => res.status(400).send(error));
     },
 
-    list(req, res) {
-        return Recipe
-            .findAll()
-            .then(recipes => res.status(200).send({message: 'All Recipes displayed', recipes}))
-            .catch(error => res.status(400).send({errors: error.message}));
+    listUpvote(req, res) {
+        return sequelize.query(`
+                          SELECT DISTINCT
+                          (SELECT COUNT(id) FROM "Ratings" WHERE recipe_id=a.id AND vote=1) AS upvotes,
+                          (SELECT COUNT(id) FROM "Ratings" WHERE recipe_id=a.id AND vote=0) AS downvotes,
+                          a.* FROM "Recipes" a
+                          LEFT JOIN "Ratings" b ON a.id = b.recipe_id ORDER BY upvotes DESC`, {type: sequelize.QueryTypes.SELECT})
+            .then(recipes => res.status(200).json({message: 'All Recipes displayed', recipes}))
+            .catch(error => res.status(400));
     },
 
     update(req, res) {
