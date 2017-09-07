@@ -3,7 +3,7 @@ import db from '../models';
 const Review = db.Review;
 const Recipe = db.Recipe;
 
-module.exports = {
+const reviewsController = {
 	create(req, res){
         Recipe.findById(req.params.recipeId)
         .then((recipe) => {
@@ -24,3 +24,5 @@ module.exports = {
         .catch(error => res.status(400).send(error));
     },
 };
+
+export default reviewsController;

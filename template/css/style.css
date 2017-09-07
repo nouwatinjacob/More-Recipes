@@ -1,19 +1,18 @@
-/* Custom Stylesheet */
+* Custom Stylesheet */
 /**
  * Use this file to override Materialize files so you can update
  * the core Materialize files in the future
  *
  * Made By MaterializeCSS.com
  */
-body{
-  padding: 0;
-  margin: 0;
-  min-height: 100vh;
 
-}
 nav ul a,
 nav .brand-logo {
   color: #444;
+}
+
+.mainLogo{
+  margin-top:0;
 }
 
 p {
@@ -24,18 +23,29 @@ p {
   color: #26a69a;
 }
 
-.parallax-container {
-  min-height: 380px;
+.recipes {
+  margin-top: 27px;
+  background: #efebe9;
+}
+
+#index-banner {
+  background: url("../img/bg.jpg") no-repeat;
+  background-size: 100% 100%;
+  min-height: 500px;
   line-height: 0;
   height: auto;
   color: rgba(255,255,255,.9);
 }
-  .parallax-container .section {
-    width: 100%;
-  }
+.parallax-container {
+
+}
+.parallax-container .section {
+  width: 100%;
+}
+
 
 @media only screen and (max-width : 992px) {
-  .parallax-container .section {
+  .parallax-container .section{
     position: absolute;
     top: 40%;
   }
@@ -45,24 +55,17 @@ p {
 }
 
 @media only screen and (max-width : 600px) {
-  #index-banner .section {
+  #index-banner .section{
     top: 0;
-  }
-
-  .banner{
-    min-height: 100vh;
   }
 }
 
 @media only screen and (max-width : 321px) {
-  .login-form, {
-    margin-top: -80px !important;
-  }
-
-  .banner{
-    min-height: 100vh;
+  #index-form{
+    margin-left: 20px;
   }
 }
+
 
 .icon-block {
   padding: 0 15px;
@@ -75,54 +78,33 @@ footer.page-footer {
   margin: 0;
 }
 
-.mandiv {
-  height: 100%;
-  width: 1000px;
+
+.reg-form {
+  background: #f5f5f5;
+  max-width: 100%;
+  max-height: 100%;
+  clear: both;
 }
 
-.top {
-  /*background: url("../img/bg.jpg") no-repeat;*/
-  background-color: #fff;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  height: 600px !important;
-  color: rgba(255,255,255,.9);
+@media only screen and (max-width : 320px) {
+  .reg-form {
+    max-width: 100%;
+    max-height: 100%;
+  }
 }
 
-.welcome, .login-form {
-  margin-top: 80px !important;
+@media only screen and (max-width : 767px) {
+  .reg-form {
+    max-width: 100%;
+    max-height: 100%;
+    overflow-x: hidden;
+  }
 }
 
-.recipes {
-  background: #efebf9;
+.maindiv {
+  max-width: 100%;
 }
 
-.modal-overlay {
-  display: none !important;
-}
-
-#sidenav-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 120vh;
-  background-color: rgba(0, 0, 0, 0.5);
-  will-change: opacity;
-}
-
-
-
-/* Custm */
-.banner{
-  min-height: 80vh;
-  background: url("../img/bg.jpg") no-repeat scroll;
-  background-size: cover;
-  background-position: 100% 100%;
-}
-
-.banner-inner{
-
+.pagination li.active {
+  background-color: #64dd17;
 }

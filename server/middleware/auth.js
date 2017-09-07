@@ -1,16 +1,15 @@
-const jwt = require('jsonwebtoken');
+import jwt from 'jsonwebtoken';
 const User = require('../models').User;
 
-const secret = 'iloveeatingpizza';
+const secret = process.env.SECRET_TOKEN;
 
 const Auth = {
     verifyToken(req, res, next) {
         const token = req.body.token || req.headers['x-access-token'];
         if (token) {
-
-            jwt.verify(token, 'secret', (error, decoded) => {
+            jwt.verify(token, secret, (error, decoded) => {
                 if (error) {
-                    return res.status(401).send({message: 'Invalid authorization token'});
+                    return res.status(401).json({message: 'Invalid authorization token'});
                 }
                 User.findById(decoded.id)
                     .then((user) => {
@@ -23,13 +22,17 @@ const Auth = {
                     .catch(err => res.status(404).json(err));
             });
         } else {
-            res.status(403).send('Token not provided');
+            res.status(403).json({
+	            message: 'Token not provided'
+            });
         }
     },
     VerifyUser (req, res, next) {
         if (req.decoded && req.decoded.username) return next();
-        return res.status(401).send({ message: 'You must be a User to perform this operation' });
+        return res.status(401).json({
+            message: 'You must be a User to perform this operation'
+        });
     }
 };
 
-module.exports = Auth;
+export default Auth;
