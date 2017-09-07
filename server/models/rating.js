@@ -13,5 +13,13 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false
   }, 
 });
+  Rating.associate = (models) => {
+    Rating.belongsTo(models.Recipe, {
+      foreignKey: 'recipe_id'
+    });
+    Rating.belongsTo(models.User, {
+      foreignKey: 'user_id'
+    });
+  };
   return Rating;
 };

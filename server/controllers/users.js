@@ -1,7 +1,9 @@
-const User = require('../models').User;
-const Validator = require('validatorjs');
-const _ = require('lodash');
-const jwt = require('jsonwebtoken');
+import jwt from 'jsonwebtoken';
+import Validator from 'validatorjs';
+import db from '../models';
+import _ from 'lodash';
+
+const User = db.User;
 
 const secret = 'iloveeatingpizza';
 
