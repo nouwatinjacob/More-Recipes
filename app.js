@@ -1,27 +1,30 @@
-const express = require('express');
-const logger = require('morgan');
-const bodyParser = require('body-parser');
-const jwt    = require('jsonwebtoken');
+import express from 'express';
+import logger from 'morgan';
+import parser from 'body-parser';
+import routes from './server/routes/index';
 
+const dotenv = require('dotenv');
 
-// Set up the express app
+dotenv.config();
+
 const app = express();
+const router = express.Router();
 const port = parseInt(process.env.PORT, 10) || 8000;
+
+routes(router);
+
 app.set('port', port);
-// Log requests to the console.
+
 app.use(logger('dev'));
+app.use(parser.json());
+app.use(parser.urlencoded({ extended: false }));
 
-// Parse incoming requests data (https://github.com/expressjs/body-parser)
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use('/api/v1/', router);
 
-// Setup a default catch-all route that sends back a welcome message in JSON format.
+app.get('*', (req, res) => res.status(404).json({
+    message: 'Invalid Url'
+}));
 
-require('./server/routes')(app);
-// app.get('*', (req, res) => res.status(200).send({
-//     message: 'Welcome to More resipe API',
-// }));
+app.listen(port, () => console.log(`Port running at ${port}`));
 
-app.listen(port, () => console.log(`port running at ${port}`));
-
-//module.exports = app;
+export default app;

@@ -2,7 +2,8 @@ import db from '../models';
 
 const Favorite = db.Favorite;
 const Recipe = db.Recipe;
-module.exports = {
+
+const favoriteController = {
     create(req, res) {
         Favorite.findOne({
             where: {recipe_id: req.body.recipe_id, user_id: req.params.userId}
@@ -30,7 +31,7 @@ module.exports = {
                 model: Recipe
             }]
         }).then((favorites) => {
-            console.log("favrite : ", favorites);
+            console.log("favorite : ", favorites);
                 return res.status(200).send({
                     message: 'users all Favorite Displayed', favorites
                 });
@@ -38,3 +39,5 @@ module.exports = {
             .catch(error => res.status(400).send({errors: error.message}));
     },
 };
+
+export default favoriteController;

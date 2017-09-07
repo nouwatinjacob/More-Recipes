@@ -1,13 +1,18 @@
-import users from './users';
-import recipes from './recipes';
-import reviews from './reviews';
-import favorites from './favorites';
-import ratings from './ratings';
+import usersController from './users';
+import recipesController from './recipes';
+import reviewsController from './reviews';
+import favoritesController from './favorites';
+import ratingsController from './ratings';
+
 
 module.exports = {
-  users,
-  recipes,
-  reviews,
-  favorites,
-  ratings
+  usersController,
+  recipesController,
+  reviewsController,
+  favoritesController,
+  ratingsController
+  // recipes,
+  // reviews,
+  // favorites,
+  // ratings
 };

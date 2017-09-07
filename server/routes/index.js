@@ -1,27 +1,52 @@
-const usersController = require('../controllers').users;
-const recipesController = require('../controllers').recipes;
-const reviewsController = require('../controllers').reviews;
-const favoritesController = require('../controllers').favorites;
-const ratingsController = require('../controllers').ratings;
+import { usersController, recipesController, reviewsController, favoritesController, ratingsController } from '../controllers';
 
-module.exports = (app) => {
-  app.get('/api', (req, res) => res.status(200).send({
-    message: 'Welcome to the More Recipes API!',
-  }));
 
-  app.post('/api/users/signup', usersController.create);//register user
-  app.post('/api/users/signin', usersController.login);// login user
+import authMiddleware from '../middleware/auth';
 
-  app.post('/api/recipes', recipesController.create);//create recipe
-  app.get('/api/recipes', recipesController.list);// all recipe
-  app.put('/api/recipes/:recipeId', recipesController.update); //modify recipe
 
-  app.post('/api/recipes/:recipeId/reviews', reviewsController.create);//post review
+const routes = (router) => {
+    router.route('/')
+        .get((req, res) => res.status(200).json({
+          message: 'Welcome to the More Recipe API!',
+        }));
 
-  app.post('/api/users/:userId/recipes', favoritesController.create);
-  app.get('/api/users/:userId/recipes', favoritesController.list);
+    router.route('/users/signup')
+        .post(usersController.create);
 
-  app.post('/api/ratings/:userId/upVotes', ratingsController.upVote);
-  app.post('/api/ratings/:userId/downVotes', ratingsController.downVote);
-  app.get('/api/ratings/', ratingsController.list);
-};
+    router.route('/users/signin')
+        .post(usersController.login);
+
+    //recipe add/ list and update
+    router.route('/recipes')
+        .post(authMiddleware.verifyToken, recipesController.create);
+
+    router.route('/recipes')
+        .get(authMiddleware.verifyToken, recipesController.list);
+
+    router.route('/recipes/:recipeId')
+        .put(authMiddleware.verifyToken, authMiddleware.VerifyUser, recipesController.update);
+
+    //post review for recipe
+    router.route('/recipes/:recipeId/reviews')
+        .post(authMiddleware.verifyToken, reviewsController.create);
+
+    //favorite recipe
+    router.route('/users/:userId/recipes')
+        .post(favoritesController.create);
+
+    router.route('/users/:userId/recipes')
+        .get(authMiddleware.verifyToken, favoritesController.list);
+
+    //Recipe Vote
+    router.route('/ratings/:userId/upVotes')
+        .post(ratingsController.upVote);
+
+    router.route('/ratings/:userId/downVotes')
+        .post(authMiddleware.verifyToken, ratingsController.downVote);
+
+
+    router.route('/ratings')
+      .get(ratingsController.list);
+  };
+export default routes;
+

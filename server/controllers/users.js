@@ -5,7 +5,7 @@ import _ from 'lodash';
 
 const User = db.User;
 
-const secret = 'iloveeatingpizza';
+const secret = process.env.SECRET_TOKEN;
 
 const regRules = {
   name: 'required|min:3',
@@ -17,7 +17,7 @@ const regRules = {
   user_image:'required'
 };
 
-module.exports = {
+const usersController = {
 
     create(req, res, next) {
         const body = req.body;
@@ -28,7 +28,7 @@ module.exports = {
             }
 
             User.findOne({
-                where: {email: body.email}
+                where: {username: body.username}
             })
                 .then((user) => {
                     if (user) {
@@ -38,7 +38,7 @@ module.exports = {
                         .then((savedUser) => {
                             const data = _.pick(savedUser, ['id', 'name', 'email', 'telephone', 'username', 'user_image']);
                             const myToken = jwt.sign(data, secret, {expiresIn: 24 * 60 * 60});
-                            return res.status(200).send({token: myToken, message: 'Registration Succesful'});
+                            return res.status(200).json({code:200, token: myToken, message: 'Registration Succesfull'});
                         })
                         .catch(error => res.status(500).send(error));
                 })
@@ -47,11 +47,11 @@ module.exports = {
                 });
 
         } else {
-            return res.status(401).json({message: validator.errors.all()});
+            return res.status(400).json({message: validator.errors.all()});
         }
     },
-
-    login (req, res) {
+  
+  login (req, res) {
         const body = _.pick(req.body, ['username', 'password']);
         const loginRules = {
             username: 'required',
@@ -71,7 +71,7 @@ module.exports = {
                     return Promise.reject({ code: 404, message: 'User not found' });
                 }
                 if (!user.comparePassword(user, body.password)) {
-                    return res.status(400).send({ message: 'Password does not match' });
+                    return res.status(400).json({ message: 'Password does not match' });
                 }
                 const data = _.pick(user, ['id', 'name', 'email', 'telephone', 'username', 'user_image']);
                 const myToken = jwt.sign(data, secret, { expiresIn: 24 * 60 * 60 });
@@ -80,3 +80,5 @@ module.exports = {
             .catch(error => res.send(error));
     },
 };
+
+export default usersController;
