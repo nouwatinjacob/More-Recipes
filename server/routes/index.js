@@ -45,7 +45,12 @@ const routes = (router) => {
         .post(authMiddleware.verifyToken, ratingsController.downVote);
 
 
-    router.route('/ratings')
+    router.route('/recipes', function (req, res) {
+        let sort = req.param(sort);
+        let order = req.param(order);
+
+        res.send(sort+ '' + order);
+      })
       .get( recipesController.listUpvote);
   };
 export default routes;
