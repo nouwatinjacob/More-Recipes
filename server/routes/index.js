@@ -26,6 +26,9 @@ const routes = (router) => {
     router.route('/recipes/:recipeId')
         .put(authMiddleware.verifyToken, authMiddleware.VerifyUser, recipesController.update);
 
+    router.route('/recipes/:recipeId')
+      .delete(authMiddleware.verifyToken, authMiddleware.VerifyUser, recipesController.delete);//delete recipe
+
     //post review for recipe
     router.route('/recipes/:recipeId/reviews')
         .post(authMiddleware.verifyToken, reviewsController.create);
