@@ -20,8 +20,8 @@ const routes = (router) => {
     router.route('/recipes')
         .post(authMiddleware.verifyToken, recipesController.create);
 
-    // router.route('/recipes')
-    //     .get(authMiddleware.verifyToken, recipesController.list);
+    router.route('/recipes')
+        .get(authMiddleware.verifyToken, recipesController.list);
 
     router.route('/recipes/:recipeId')
         .put(authMiddleware.verifyToken, authMiddleware.VerifyUser, recipesController.update);

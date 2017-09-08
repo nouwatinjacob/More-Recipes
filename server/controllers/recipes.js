@@ -80,7 +80,7 @@ const recipesController = {
   getUserRecipes(req, res) {
     return Recipe
       .findAll({
-        where: {user_id: req.decoded.user_id},
+        where: {user_id: req.decoded.id},
         attributes: keys
       })
       .then((recipes) => {
