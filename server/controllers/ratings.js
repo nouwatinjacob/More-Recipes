@@ -13,19 +13,6 @@ const ratingsController = {
     vote(req, res, 0);
     },
 
-    list(req, res) {
-	    Rating.findAll({
-        where: {recipe_id: re},
-        attribute: [{
-	        
-        }]
-    }).then((recipesVoteCount) => {
-        console.log(recipesVoteCount);
-        })
-    .catch(error => res.status(400).json({
-	        errors: error.message
-        }));
-    },
     };
 
 let vote = (req, res, status) => {
@@ -78,7 +65,7 @@ let vote = (req, res, status) => {
             return Rating.create({
                 vote: status,
                 recipe_id: req.body.recipe_id,
-                user_id: req.decoded.user_id
+                user_id: req.decoded.id
     })
         }
     })

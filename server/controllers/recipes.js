@@ -6,7 +6,7 @@ const User = db.User;
 
 const recipesController = {
     create(req, res){
-        User.findById(req.decoded.user_id)
+        User.findById(req.decoded.id)
             .then((user) => {
                 if (!user) {
                     return res.status(404).json({code: 404, message: 'This User Does not exit'});
@@ -15,7 +15,7 @@ const recipesController = {
                     name: req.body.name,
                     description: req.body.description,
                     ingredients: req.body.ingredients,
-                    user_id: req.decoded.user_id
+                    user_id: req.decoded.id
                 })
                     .then((recipe) => {
                         return res.status(201).json({code: 200, message: 'Recipe has been Added ', data: recipe});
@@ -80,7 +80,7 @@ const recipesController = {
   getUserRecipes(req, res) {
     return Recipe
       .findAll({
-        where: {user_id: req.decoded.user_id},
+        where: {id: req.decoded.id},
         attributes: keys
       })
       .then((recipes) => {

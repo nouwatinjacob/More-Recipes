@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start-dev":"nodemon app --exec babel-node",
     "start": "node index",
     "test": "mocha --compilers js:babel-register"
   },
