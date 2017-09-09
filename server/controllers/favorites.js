@@ -6,14 +6,14 @@ const Recipe = db.Recipe;
 const favoriteController = {
     create(req, res) {
         Favorite.findOne({
-            where: {recipe_id: req.body.recipe_id, user_id: req.params.userId}
+            where: {recipe_id: req.body.recipe_id, user_id: req.decoded.id}
         }).then((favorite) => {
             if (favorite) {
                 return res.status(404).json({code: 404, message: 'This Recipe exist in your Favorite'});
             } else {
                 return Favorite.create({
                     recipe_id: req.body.recipe_id,
-                    user_id: req.params.userId
+                    user_id: req.decoded.id
                 });
             }
         }).then((newFavorite) => {
