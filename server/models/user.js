@@ -48,7 +48,7 @@ module.exports = (sequelize, DataTypes) => {
         })
     };
 
-    User.prototype.comparePassword = (user, password) => {
+    User.prototype.comparePassword = function(user, password) {
         return bcrypt.compareSync(password, user.password);
     };
     // Hooks
