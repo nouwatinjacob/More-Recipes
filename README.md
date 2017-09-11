@@ -1,4 +1,5 @@
 **More-Recipes**
+[![Build Status](https://travis-ci.org/nouwatinjacob/More-Recipes.svg?branch=development)](https://travis-ci.org/nouwatinjacob/More-Recipes)
 
 A Recipe management and sharing app with great features!
 
@@ -33,18 +34,6 @@ ExpressJs - The web framework used
 Sequelize - The ORM used
 Postgres - Database Used
 NPM - Dependency Management
-API Routes
-
-[Signup] - POST http://localhost:8000/api/v1/users/signup
-[Signin] - POST http://localhost:8000/api/v1/users/signin
-[Create Recipe] - POST http://localhost:8000/api/v1/recipes
-[Modify Recipe] - PUT http://localhost:8000/api/v1/recipes/:recipeId
-[Delete Recipe] - DELETE http://localhost:8000/api/v1/recipes/:recipeId
-[Fetch All Recipes] - GET http://localhost:3000/api/v1/recipes
-[Fetch Recipes by Most Upvotes] - GET http://localhost:3000/api/v1/recipes?sort=upvotes&order=ascending
-[Fetch My Recipes] - GET http://localhost:3000/api/v1/users/myRecipes
-[Post Recipe Review] - POST http://localhost:3000/api/v1/recipes/:recipeId/reviews
-[Fetch Recipe Reviews] - GET http://localhost:3000/api/v1/recipes/:recipeId/reviews
 
 **Versioning**
 
