@@ -1,6 +1,7 @@
 ## More-Recipes
 
 [![Build Status](https://travis-ci.org/nouwatinjacob/More-Recipes.svg?branch=development)](https://travis-ci.org/nouwatinjacob/More-Recipes)
+[![Coverage Status](https://coveralls.io/repos/github/nouwatinjacob/More-Recipes/badge.svg?branch=development)](https://coveralls.io/github/nouwatinjacob/More-Recipes?branch=development)
 
 A Recipe management and sharing app with great features!
 
