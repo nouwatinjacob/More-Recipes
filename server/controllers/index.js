@@ -5,14 +5,10 @@ import favoritesController from './favorites';
 import ratingsController from './ratings';
 
 
-module.exports = {
+export {
   usersController,
   recipesController,
   reviewsController,
   favoritesController,
   ratingsController
-  // recipes,
-  // reviews,
-  // favorites,
-  // ratings
 };

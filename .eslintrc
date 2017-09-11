@@ -17,6 +17,8 @@
     "curly": [2, "multi-line"],
     "no-shadow": [2, { "allow": ["req", "res", "err"] }],
     "linebreak-style": 0,
+    "prefer-destructuring": 0,
+    "no-use-before-define": 0,
     "valid-jsdoc": [2, {
       "requireReturn": true,
       "requireReturnType": true,

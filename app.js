@@ -17,12 +17,12 @@ app.set('port', port);
 
 app.use(logger('dev'));
 app.use(parser.json());
-app.use(parser.urlencoded({ extended: false }));
+app.use(parser.urlencoded({extended: false}));
 
 app.use('/api/v1/', router);
 
 app.get('*', (req, res) => res.status(404).json({
-    message: 'Invalid Url'
+  message: 'Invalid Url'
 }));
 
 app.listen(port, () => console.log(`Port running at ${port}`));
