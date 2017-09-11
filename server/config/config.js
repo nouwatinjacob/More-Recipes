@@ -1,12 +1,13 @@
 const dotEnv = require('dotenv');
-dotEnv.config();
 
+dotEnv.config();
+console.log(process.env.NODE_ENV, '>>>>>>>>');
 const config = {
   production: {
     use_env_variable: 'DATABASE_URL',
     protocol: 'postgres',
     database: process.env.DB_NAME,
-    port: 5433,
+    port: 5432,
     dialect: 'postgres'
   },
   development: {
@@ -14,7 +15,7 @@ const config = {
     password: process.env.PASSWORD,
     database: process.env.DB_NAME,
     host: '127.0.0.1',
-    port: 5433,
+    port: 5432,
     dialect: 'postgres'
   },
   test: {
