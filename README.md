@@ -43,7 +43,7 @@ I used Git for versioning. For the versions available, see the tags on this repo
 
 **Getting Started**
 
-git clone https://github.com/larrystone/BC-26-More-Recipes.git
+git clone https://github.com/nouwatinjacob/More-Recipes.git
 Run npm install to install all packages
 Run sequelize db:migrate to run pending migrations
 Run npm start to start application
@@ -55,7 +55,7 @@ In the project directory, you can run:
 npm start
 
 Runs the app in the development mode.
-Open http://localhost:3000 to view it in the browser.
+Open http://localhost:8000 to view it in the browser.
 
 npm start:dev
 

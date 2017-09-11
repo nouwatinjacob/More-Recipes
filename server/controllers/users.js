@@ -50,7 +50,6 @@ const usersController = {
         .catch((error) => {
           return res.status(500).send('An error occured while trying to create a user ', error.message);
         });
-
     } else {
       return res.status(400).json({ message: validator.errors.all() });
     }
@@ -73,9 +72,11 @@ const usersController = {
     })
       .then((user) => {
         if (!user) {
-          return Promise.reject({ code: 404, message: 'User not found' });
+          return res.status(404).json({
+            message: 'User not found'
+          });
         }
-        if (!user.comparePassword(user, body.password)) {
+        if (!user.comparePassword(user, req.body.password)) {
           return res.status(400).json({
             message: 'Password does not match'
           });
