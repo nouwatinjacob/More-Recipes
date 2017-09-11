@@ -1,4 +1,5 @@
-**More-Recipes**
+## More-Recipes
+
 [![Build Status](https://travis-ci.org/nouwatinjacob/More-Recipes.svg?branch=development)](https://travis-ci.org/nouwatinjacob/More-Recipes)
 
 A Recipe management and sharing app with great features!
