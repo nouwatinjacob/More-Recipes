@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "engines": {
-    "node": "6.11.3"
-  },
   "nyc": {
     "exclude": [
       "server/tests/"
