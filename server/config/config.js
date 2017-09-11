@@ -1,7 +1,7 @@
 const dotEnv = require('dotenv');
 
 dotEnv.config();
-console.log(process.env.NODE_ENV, '>>>>>>>>');
+
 const config = {
   production: {
     use_env_variable: 'DATABASE_URL',
