@@ -22,7 +22,7 @@ const config = {
     password: process.env.TEST_DB_PASSWORD,
     database: process.env.TEST_DB_NAME,
     host: '127.0.0.1',
-    port: 5433,
+    port: 5432,
     dialect: 'postgres'
   }
 };
