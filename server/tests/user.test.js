@@ -1,5 +1,4 @@
-import jwt from 'jsonwebtoken';
-import chai, {expect} from 'chai';
+import chai, { expect } from 'chai';
 import supertest from 'supertest';
 import chaiHttp from 'chai-http';
 import app from '../../app';
