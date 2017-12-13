@@ -1,4 +1,5 @@
 const dotEnv = require('dotenv');
+
 dotEnv.config();
 
 const config = {
@@ -6,7 +7,7 @@ const config = {
     use_env_variable: 'DATABASE_URL',
     protocol: 'postgres',
     database: process.env.DB_NAME,
-    port: 5433,
+    port: 5432,
     dialect: 'postgres'
   },
   development: {

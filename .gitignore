@@ -1,4 +1,5 @@
 node_modules/
 .idea/
-test/
-template/
+.env
+.nyc_output
+coverage

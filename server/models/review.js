@@ -3,28 +3,15 @@ module.exports = (sequelize, DataTypes) => {
     review_body: {
       type: DataTypes.TEXT,
       allowNull: false
-  }, 
-  user_id: {
+    },
+    user_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-  },
-  recipe_id: {
+    },
+    recipe_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-  },
-},
-
-  {
-    classMethods: {
-      associate: (models) => {
-        Review.belongsTo(models.User, {
-            foreignKey: 'user_id'
-        });
-        Review.belongsTo(models.Recipe, {
-            foreignKey: 'recipe_id'
-        });
-      }
-    }
+    },
   });
   return Review;
 };
